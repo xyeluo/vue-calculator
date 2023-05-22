@@ -95,7 +95,7 @@ export default {
     },
     backspaceInput() {
       if (!this.input.length) {
-        this.input = '0';
+        this.input = '';
         return;
       }
       this.input = this.input.slice(0, this.input.length - 1);
