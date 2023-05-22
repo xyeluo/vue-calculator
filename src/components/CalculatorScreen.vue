@@ -75,7 +75,23 @@ export default {
         this.input = '';
         this.isInputReset = false;
       }
-      this.input = this.input + params;
+      this.input += params;
+      this.parseInput();
+    },
+    parseInput() {
+      // 去掉所有开头的零
+      let isZeroStart;
+      do {
+        isZeroStart = false;
+        if (this.input.slice(0, 1) === '0') {
+          isZeroStart = true;
+          this.input = this.input.slice(1);
+        }
+      } while (isZeroStart);
+      // 小数点开头，去除多余小数点后前面补上'0.'
+      if (this.input.match(/^\./)) {
+        this.input = '0.' + this.input.slice(1).replace(/^\./g, '');
+      }
     },
     backspaceInput() {
       if (!this.input.length) {

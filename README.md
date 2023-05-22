@@ -1,5 +1,5 @@
 # vue_calcutator
-
+![Netlify Status](https://api.netlify.com/api/v1/badges/3417fce8-551f-4eda-accf-6f3582d9aa3d/deploy-status)]
 ## Project setup
 ```
 yarn install

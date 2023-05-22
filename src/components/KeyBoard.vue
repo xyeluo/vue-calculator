@@ -11,12 +11,10 @@
 
 <script>
 import keyButtons from '@/utils/keyButtons.js';
-// import { validSymbols } from '@/utils/calcWhite.js';
 export default {
   name: 'KeyBoard',
   data() {
     return {
-      keyButtons,
       allButtons: '',
     };
   },
@@ -55,6 +53,9 @@ export default {
       el.classList.add('active');
       this.$bus.$emit('input', key);
     },
+  },
+  beforeMount() {
+    this.keyButtons = keyButtons;
   },
   mounted() {
     document.addEventListener('keydown', this.getKeyDownContent);
